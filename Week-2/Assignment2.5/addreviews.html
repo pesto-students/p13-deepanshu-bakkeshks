@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>addreviews</title>
+    <style>
+      ol {
+        list-style: none;
+        padding: 2px;
+      }
+      li {
+        display: inline;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h2>Restaurant Review</h2>
+      <br />
+      <nav>
+        <ol>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./addreviews.html">AddReviews</a></li>
+          <li><a href="./about.html">About</a></li>
+        </ol>
+      </nav>
+    </header>
+
+    <main>
+      <h3>Add Review</h3>
+      <br />
+      <label>Name? <input type="text" /></label>
+      <br />
+      <br />
+      <label>
+        Restaurant?
+        <select>
+          <option>Choose one...</option>
+          <option value="greekhouse">greekhouse</option>
+          <option value="mainstreetcafe">mainstreetcafe</option>
+        </select>
+      </label>
+      <br />
+      <br />
+      <label>Date of visit? <input type="date" value="date" /></label>
+      <br />
+      <br />
+      <label
+        >Rating? <input type="number" max="5" min="1" value="rating"
+      /></label>
+      <br />
+      <br />
+      <label>Details? <textarea value="details"> </textarea></label>
+      <br />
+      <br />
+      <input type="submit" />
+    </main>
+    <footer>@2023 Restaurant Reviews</footer>
+  </body>
+</html>
