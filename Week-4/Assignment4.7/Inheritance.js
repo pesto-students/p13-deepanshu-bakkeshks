@@ -1,0 +1,30 @@
+class Vehicle {
+  constructor(make, model, year, color) {
+    this.make = make;
+    this.model = model;
+    this.year = year;
+    this.color = color;
+  }
+
+  drive() {
+    console.log(`Driving ${this.make} ${this.model}.`);
+  }
+}
+
+class Car extends Vehicle {
+  constructor(make, model, year, color, numSeats) {
+    super(make, model, year, color);
+    this.numSeats = numSeats;
+  }
+}
+
+class RideShareCar extends Car {
+  constructor(make, model, year, color, numSeats, isAvailable) {
+    super(make, model, year, color, numSeats);
+    this.isAvailable = isAvailable;
+  }
+}
+
+const rideShareCar = new RideShareCar("Toyota", "Camry", 2023, "Blue", 5, true);
+rideShareCar.drive();
+console.log(rideShareCar);
