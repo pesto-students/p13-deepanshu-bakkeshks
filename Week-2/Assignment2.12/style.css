@@ -1,0 +1,63 @@
+/* Start of Header Style */
+header {
+  background-color: lightgreen;
+}
+header .logo {
+  width: 30%;
+  display: inline-block;
+  margin-left: 10px;
+}
+header .navlinks {
+  width: 65%;
+  display: inline-block;
+}
+header .navlinks ul {
+  list-style-type: none;
+  text-align: end;
+}
+header .navlinks ul li {
+  display: inline-block;
+}
+/* End of Header Style */
+.title {
+  text-transform: uppercase;
+  font-size: medium;
+  width: 65%;
+}
+
+main .sidebar h2 {
+  font-size: medium;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between; /* Distributes space between columns */
+  align-items: stretch; /* Stretches columns to the same height */
+}
+
+.main-column {
+  flex-basis: calc(50% - 10px); /* Set width of main columns with spacing */
+  padding: 10px;
+}
+
+.sidebar {
+  flex-basis: 30%; /* Set width of the sidebar */
+  padding: 10px;
+  margin-top: -77px;
+}
+
+@media screen and (max-width: 768px) {
+  main .title h2 {
+    font-size: 16px;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+  .main-column {
+    width: 80%;
+  }
+  .sidebar {
+    margin-top: 10px;
+  }
+}
