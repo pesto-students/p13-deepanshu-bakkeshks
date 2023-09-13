@@ -77,11 +77,15 @@ function checkForWinner() {
 }
 
 function newGame() {
-  // Clear the computer's move timeout
+  // TO-DO
+  //  Logic
+  // 1] Use clearTimeout() & then set computerMoveTimeout back to 0
+  // 2] Loop through all game board buttons and set the inner HTML of each to an empty string.
+  // 3] Allow the player to take a turn by setting playerTurn to true.
+  // 4] Set the text of the turn information paragraph to "Your turn".
+
   clearTimeout(computerMoveTimeout);
   computerMoveTimeout = 0;
-
-  // Loop through all game board buttons and reset them
   const buttons = getGameBoardButtons();
   for (let button of buttons) {
     button.innerHTML = "";
@@ -89,16 +93,18 @@ function newGame() {
     button.disabled = false;
   }
 
-  // Allow the player to take a turn
   playerTurn = true;
-
-  // Set the text of the turn information paragraph
   const turnInfo = document.getElementById("turnInfo");
   turnInfo.textContent = "Your turn";
 }
 
 function boardButtonClicked(button) {
-  // If it's the player's turn and the button is not already marked
+  // TO-DO
+  // Logic : If playerTurn is true:
+  // 1] Set the button's inner HTML to "X".
+  // 2] Add the "x" class to the button.
+  // 3] Set the button's disabled attribute to true so the button cannot be clicked again.
+  // 4] Call switchTurn() so the computer can take a turn.
   if (playerTurn && button.innerHTML === "") {
     button.innerHTML = "X";
     button.classList.add("x");
@@ -108,7 +114,20 @@ function boardButtonClicked(button) {
 }
 
 function switchTurn() {
-  // Check for a winner or draw
+  // TO-DO
+  // Logic
+  // 1] Call checkForWinner() to determine the game's status.
+  // 1.1] If more moves are left:
+  // 1.1.1] If switching from the player's turn to the computer's turn, use setTimeout() to call makeComputerMove() after 1 second (1000 milliseconds).
+  // Assign the return value of setTimeout() to computerMoveTimeout. The timeout simulates the computer "thinking", and prevents the nearly-instant
+  // response to each player move that would occur from a direct call to makeComputerMove().
+  // 1.1.2] Toggle playerTurn's value from false to true or from true to false.
+  // 1.1.3] Set the turn information paragraph's text content to "Your turn" if playerTurn is true, or "Computer's turn" if playerTurn is false.
+  // 1.2]   In the case of a winner or a draw game, do the following:
+  // 1.2.1] Set playerTurn to false to prevent the user from being able to place an X after the game is over.
+  // 1.2.2] If the human has won, display the text "You win!" in the turn info paragraph.
+  // 1.2.3] If the computer has won, display the text "Computer wins!" in the turn info paragraph.
+  // 1.2.4] If the game is a draw, display the text "Draw game" in the turn info paragraph.
   const status = checkForWinner();
   const turnInfo = document.getElementById("turnInfo");
 
@@ -130,13 +149,18 @@ function switchTurn() {
       turnInfo.textContent = "Your turn";
     }
 
-    // Toggle playerTurn
     playerTurn = !playerTurn;
   }
 }
 
 function makeComputerMove() {
-  // Get all available buttons
+  // TO-DO
+  // Logic
+  // Implement the makeComputerMove() function to do the following:
+  // Choose a random, available button, and set the button's inner HTML to "O".
+  // Add the "o" class to the button.
+  // Set the button's disabled attribute to true.
+  // Call switchTurn() at the end of the function to switch back to the player's turn.
   const buttons = getGameBoardButtons();
   const availableButtons = [];
 
@@ -146,15 +170,10 @@ function makeComputerMove() {
     }
   }
 
-  // Choose a random button from available buttons
   const randomIndex = Math.floor(Math.random() * availableButtons.length);
   const selectedButton = availableButtons[randomIndex];
-
-  // Set the button's inner HTML to "O" (computer's move)
   selectedButton.innerHTML = "O";
   selectedButton.classList.add("o");
   selectedButton.disabled = true;
-
-  // Switch back to the player's turn
   switchTurn();
 }
