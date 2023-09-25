@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vulnerability Scoring Calculator</title>
+    <link href="calculator.css" type="text/css" rel="stylesheet" />
+    <script src="calculator.js" defer></script>
+  </head>
+  <body>
+    <div class="main" id="main">
+      <h1>Vulnerability Scoring Calculator</h1>
+      <div class="warning" id="warning">
+        Select values for all categories to generate a score
+      </div>
+      <div class="score" id="score">--</div>
+
+      <div class="container">
+        <!-- Property: Attack Vector -->
+        <div class="property">
+          <h4>Attack Vector</h4>
+          <input type="radio" name="AV" id="AV_N" value="0.85" /><label
+            class="radioSelect"
+            for="AV_N"
+            >Network</label
+          >
+          <input type="radio" name="AV" id="AV_A" value="0.62" /><label
+            class="radioSelect"
+            for="AV_A"
+            >Adjacent Network</label
+          >
+          <input type="radio" name="AV" id="AV_L" value="0.55" /><label
+            class="radioSelect"
+            for="AV_L"
+            >Local</label
+          >
+          <input type="radio" name="AV" id="AV_P" value="0.20" /><label
+            class="radioSelect"
+            for="AV_P"
+            >Physical</label
+          >
+        </div>
+
+        <!-- Property: Attack Complexity -->
+        <div class="property">
+          <h4>Attack Complexity</h4>
+          <input type="radio" name="AC" id="AC_L" value="0.77" /><label
+            class="radioSelect"
+            for="AC_L"
+            >Low</label
+          >
+          <input type="radio" name="AC" id="AC_H" value="0.44" /><label
+            class="radioSelect"
+            for="AC_H"
+            >High</label
+          >
+        </div>
+
+        <!-- Property: Privilege Required -->
+        <div class="property">
+          <h4>Privilege Required</h4>
+          <input type="radio" name="PR" id="PR_N" value="0.85" /><label
+            class="radioSelect"
+            for="PR_N"
+            >None</label
+          >
+          <input type="radio" name="PR" id="PR_L" value="0.62" /><label
+            class="radioSelect"
+            for="PR_L"
+            >Low</label
+          >
+          <input type="radio" name="PR" id="PR_H" value="0.27" /><label
+            class="radioSelect"
+            for="PR_H"
+            >High</label
+          >
+        </div>
+
+        <!-- Add radio buttons for other properties here -->
+        <!-- Property: User Interaction -->
+        <div class="property">
+          <h4>User Interaction</h4>
+          <input type="radio" name="UI" id="UI_N" value="0.85" /><label
+            class="radioSelect"
+            for="UI_N"
+            >None</label
+          >
+          <input type="radio" name="UI" id="UI_R" value="0.62" /><label
+            class="radioSelect"
+            for="UI_R"
+            >Required</label
+          >
+        </div>
+
+        <!-- Property: Scope -->
+        <div class="property">
+          <h4>Scope</h4>
+          <input type="radio" name="scope" id="scope_U" value="1.0" /><label
+            class="radioSelect"
+            for="scope_U"
+            >Unchanged</label
+          >
+          <input type="radio" name="scope" id="scope_C" value="1.08" /><label
+            class="radioSelect"
+            for="scope_C"
+            >Changed</label
+          >
+        </div>
+
+        <!-- Property: Confidentiality Impact -->
+        <div class="property">
+          <h4>Confidentiality Impact</h4>
+          <input type="radio" name="conf" id="conf_N" value="0.00" /><label
+            class="radioSelect"
+            for="conf_N"
+            >None</label
+          >
+          <input type="radio" name="conf" id="conf_L" value="0.22" /><label
+            class="radioSelect"
+            for="conf_L"
+            >Low</label
+          >
+          <input type="radio" name="conf" id="conf_H" value="0.56" /><label
+            class="radioSelect"
+            for="conf_H"
+            >High</label
+          >
+        </div>
+
+        <!-- Property: Integrity Impact -->
+        <div class="property">
+          <h4>Integrity Impact</h4>
+          <input type="radio" name="integ" id="integ_N" value="0.00" /><label
+            class="radioSelect"
+            for="integ_N"
+            >None</label
+          >
+          <input type="radio" name="integ" id="integ_L" value="0.22" /><label
+            class="radioSelect"
+            for="integ_L"
+            >Low</label
+          >
+          <input type="radio" name="integ" id="integ_H" value="0.56" /><label
+            class="radioSelect"
+            for="integ_H"
+            >High</label
+          >
+        </div>
+      </div>
+      <!-- End container div -->
+    </div>
+    <!-- End main div -->
+  </body>
+</html>

@@ -1,0 +1,61 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.main {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+}
+
+.warning {
+  color: red;
+  display: none;
+}
+
+.score {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap; /* Allow properties to wrap to the next line if needed */
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.property {
+  flex-basis: calc(33.33% - 20px); /* 33.33% width with margin */
+  margin-right: 20px;
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  transition: background-color 0.3s; /* Smooth hover effect */
+}
+
+.property:hover {
+  background-color: #ccc;
+}
+
+.property input[type="radio"] {
+  display: none;
+}
+
+/* Add style for labels when radio buttons are checked */
+.property input[type="radio"]:checked + label {
+  background-color: #3498db;
+  color: #fff;
+}
+
+.radioSelect {
+  display: inline-block;
+  margin-right: 10px;
+  cursor: pointer;
+  user-select: none;
+}
