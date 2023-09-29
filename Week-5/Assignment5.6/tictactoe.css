@@ -1,0 +1,59 @@
+body {
+  font-family: Roboto, Helvetica, sans-serif;
+}
+
+.x {
+  color: red;
+}
+
+.o {
+  color: blue;
+}
+
+#gameBoard {
+  font: 85px arial, sans-serif;
+  margin: 3px;
+
+  display: grid;
+  grid-template-columns: 100px 100px 100px;
+  grid-template-rows: 100px 100px 100px;
+  grid-gap: 10px;
+}
+
+#gameBoard > button {
+  border: 1px solid LightSkyBlue;
+  text-align: center;
+  font-size: 100%;
+  font-family: inherit;
+  cursor: pointer;
+  background-color: #fff;
+  padding: 0;
+}
+
+#gameBoard > button.x {
+  background-color: #ffdddd;
+}
+
+#gameBoard > button.o {
+  background-color: #ddeeff;
+}
+
+#turnInfo {
+  font-size: 24px;
+  margin-top: 10px;
+}
+
+#newGameButton {
+  font-size: 18px;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#newGameButton:hover {
+  background-color: #0056b3;
+}
