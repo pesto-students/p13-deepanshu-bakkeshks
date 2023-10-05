@@ -5,6 +5,7 @@ Steps: Reverse the substring from the 2nd character to the end, then concatenate
     1] Base Case: If the input string is empty or has a length of 1, it is already reversed. Return the string itself.
     2] Recursive Case: For strings longer than 1 character, take the first character out, reverse the rest of the 
     string using recursion, and concatenate the first character at the end.
+Time & Space Complexity: O(N) & O(N)
 */
 
 function reverseString(str) {
