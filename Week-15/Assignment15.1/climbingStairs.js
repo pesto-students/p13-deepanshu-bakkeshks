@@ -12,5 +12,5 @@ function climbStairs(n) {
   return dp[n];
 }
 
-let input = 5;
+let input = 4;
 console.log(" Distinct ways to reach the top step:", climbStairs(input));
