@@ -1,8 +1,18 @@
-# React + Vite
+ 
+#  React Age Calculator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Web application using ReactJS that allows users to
+calculate their age based on their birthdate.
 
-Currently, two official plugins are available:
+## Features
+    1] When the "Calculate Age" button is clicked, calculate the age based on the entered birthdate.
+    2] Display the age in years, months, and days
+    3] Toggle switch between Dark & Light Mode.
+    4] Used React.memo in Header & DisplayAge components.
+    5] Animated the react components using Framer Motion & used tailwindcss for styling.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Tech Stack
+    1] React + Vite
+    2] TailwindCSS, Framer Motion
+    3] Javascript
+
