@@ -1,7 +1,8 @@
 import React, {useState} from "react";
 import { motion } from "framer-motion"; 
 
-function Header(){
+const Header = React.memo(()=>{
+    console.log("hello");
     const text = " React Age Calculator".split(" ");
   return (
     <>
@@ -29,5 +30,6 @@ function Header(){
     </>
   );
   }
+)
 
 export default Header;

@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-function DisplayAge({ age }) {
+const  DisplayAge = React.memo(({ age })=> {
   
   return (
     <div className="mt-24 flex justify-center">
@@ -27,5 +27,5 @@ function DisplayAge({ age }) {
     </div>
   );
 }
-
+)
 export default DisplayAge;
