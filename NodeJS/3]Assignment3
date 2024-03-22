@@ -1,0 +1,66 @@
+
+// movies collection
+{
+  _id: ObjectId,
+  title: String,
+  release_year: Number,
+  genre: String,
+  director: ObjectId, // Reference to directors collection
+  actors: [ObjectId] // References to actors collection
+}
+
+// directors collection
+{
+  _id: ObjectId,
+  name: String,
+  nationality: String,
+  movies_directed: [ObjectId] // References to movies collection
+}
+
+// actors collection
+{
+  _id: ObjectId,
+  name: String,
+  nationality: String,
+  movies_acted_in: [ObjectId] // References to movies collection
+}
+
+// Sample Data Insertion Queries (MongoDB Shell Syntax)
+
+// Insert movies data
+db.movies.insertMany([
+  { title: "Movie 1", release_year: 2020, genre: "Action", director: ObjectId("director_id"), actors: [ObjectId("actor_id1"), ObjectId("actor_id2")] },
+  
+]);
+
+// Insert directors data
+db.directors.insertMany([
+  { name: "Director 1", nationality: "Nationality 1", movies_directed: [ObjectId("movie_id1"), ObjectId("movie_id2")] },
+  
+]);
+
+// Insert actors data
+db.actors.insertMany([
+  { name: "Actor 1", nationality: "Nationality 1", movies_acted_in: [ObjectId("movie_id1"), ObjectId("movie_id3")] },
+  
+]);
+
+// MongoDB Queries for Tasks
+
+// a) Find all movies released in a specific year.
+db.movies.find({ release_year: 2020 });
+
+// b) Find all movies in a specific genre.
+db.movies.find({ genre: "Action" });
+
+// c) Find all movies directed by a specific director.
+db.movies.find({ director: ObjectId("director_id") });
+
+// d) Find all movies that a specific actor acted in.
+db.movies.find({ actors: ObjectId("actor_id1") });
+
+// e) Find all directors from a specific nationality.
+db.directors.find({ nationality: "Nationality 1" });
+
+// f) Find all actors from a specific nationality.
+db.actors.find({ nationality: "Nationality 1" });
