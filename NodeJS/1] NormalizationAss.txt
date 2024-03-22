@@ -1,0 +1,47 @@
+Step 1: First Normal Form (1NF)
+To achieve 1NF, we need to ensure that each column contains atomic values and eliminate repeating groups. Looking at the table provided, it appears to already be in 1NF as there are no repeating groups within any of the columns.
+
+Step 2: Second Normal Form (2NF)
+In 2NF, we identify the primary key(s) and eliminate partial dependencies. To do this, we need to identify the primary key(s) of the table. Based on the structure of the table, it seems like 'Book ID' could be a suitable candidate for the primary key as it uniquely identifies each book entry.
+
+Book ID	Title	Author	Genre	Publisher	ISBN	Price
+101	To Kill a Mockingbird	Harper Lee	Fiction	HarperCollins	978-0061120084	10.99
+102	The Great Gatsby	F. Scott Fitzgerald	Fiction	Scribner	978-0743273565	12.50
+103	Principles of Physics	Jearl Walker	Science	Wiley	978-0321976444	50.00
+
+The table already satisfies 2NF requirements as there are no partial dependencies on any part of the primary key.
+
+Step 3: Third Normal Form (3NF)
+In 3NF, we remove transitive dependencies. Transitive dependencies occur when a non-prime attribute depends on another non-prime attribute. Looking at the table, 'Publisher' and 'ISBN' seem to be dependent on each other. To remove this transitive dependency, we split the table into two:
+
+Table 1: Books
+
+Book ID	Title	Author	Genre	Publisher_ID
+101	To Kill a Mockingbird	Harper Lee	Fiction	1
+102	The Great Gatsby	F. Scott Fitzgerald	Fiction	2
+103	Principles of Physics	Jearl Walker	Science	3
+Table 2: Publishers
+
+Publisher_ID	Publisher	ISBN	Price
+1	HarperCollins	978-0061120084	10.99
+2	Scribner	978-0743273565	12.50
+3	Wiley	978-0321976444	50.00
+Now, 'Publisher' and 'ISBN' are in a separate table where 'Publisher' is the primary key, and 'ISBN' depends only on the primary key.
+
+The tables are now in 3NF.
+
+Question 3: What are primary keys and foreign keys, and how do they establish relationships between tables in a relational database?
+Primary keys and foreign keys uniquely identify rows and establish relationships between tables in a relational database
+
+Question 4: Can you explain the ACID properties concerning database transactions?
+The ACID properties ensure database transaction reliability through Atomicity, Consistency, Isolation, and Durability.
+
+Question 5: How would you describe indexing in a database and its impact on query performance?
+Indexing in a database speeds up query performance by organizing data for faster retrieval based on specified columns
+
+Question 6: What is concurrency control, and how does it relate to deadlocks in a multi-user database environment?
+Concurrency control manages simultaneous access to shared resources, preventing data corruption and addressing deadlocks in multi-user database environments
+
+Question 7: Could you provide a brief overview of database sharding and its real-time applications?
+Database sharding horizontally partitions data across multiple servers, commonly used in large-scale applications like social media platforms 
+and e-commerce websites to improve scalability and performance
