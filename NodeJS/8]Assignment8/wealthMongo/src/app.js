@@ -15,7 +15,7 @@ app.use('/assets', assetRoutes);
 app.use('/finance', financeRoutes);
 
 // Database connection
-mongoose.connect('mongodb+srv://bakkeshpruthvi49:9844@cluster0.it4pita.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
+mongoose.connect('mongodb+srv://bakkeshpruthvi49:pass@cluster0.it4pita.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
